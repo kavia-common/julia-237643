@@ -3,3 +3,4 @@ image: julia:0.6                # image comes from Docker hub
 default:
   script:
     - julia test_script.jl
+    - julia coverage_script.jl
