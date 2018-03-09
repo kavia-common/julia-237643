@@ -2,4 +2,5 @@ using Documenter, GitlabJuliaDemo
 
 makedocs(format = :html,
          sitename = "GitlabJuliaDemo",
-         pages = ["index.md"])
+         pages = ["index.md"],
+         repo = "https://gitlab.com/tkpapp/GitlabJuliaDemo/blob/{commit}{path}#L{line}")
