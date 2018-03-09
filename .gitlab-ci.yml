@@ -4,3 +4,13 @@ default:
   script:
     - julia test_script.jl
     - julia coverage_script.jl
+#    - cd docs; julia -e "Pkg.add(\"Documenter\")"; julia --color=yes make.jl
+
+pages:
+  script:
+    - cd docs; julia -e "Pkg.add(\"Documenter\")"; julia --color=yes make.jl
+  artifacts:
+    paths:
+      - docs/build
+  only:
+  - master
