@@ -5,14 +5,11 @@
 
 This is a minimal setup for a Julia package in Gitlab that has continuous integration and coverage summary set up.
 
-[.gitlab-ci.yml](.gitlab-ci.yml) uses a Julia docker image to initialize the package repository, check and build the package, and run tests and process coverage.
+[.gitlab-ci.yml](.gitlab-ci.yml) uses a Julia docker image to
 
-## Continuous integration
+1. initialize the package repository,
+2. clone and build the package,
+3. run tests and process coverage,
+4. generate the documentation using [https://github.com/JuliaDocs/Documenter.jl](Documenter.jl), which is deployed at <https://tkpapp.gitlab.io/GitlabJuliaDemo.jl/>
 
-[test_script.jl](test_script.jl) is run using Julia.
-
-## Coverage
-
-[coverage_script.jl](coverage_script.jl) is run using Julia.
-
-Use the regular expression `\(\d+.\d+\%\) covered` in *Settings 🢥 CI/CD General pipelines settings 🢥 Test coverage parsing*.
+Use the regular expression `\(\d+.\d+\%\) covered` in *Settings 🢥 CI/CD General pipelines settings 🢥 Test coverage parsing* to parse coverage percentage.
