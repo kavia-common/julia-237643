@@ -1,3 +1,4 @@
+## This script prints coverage information.
 Pkg.add("Coverage")
 cd(Pkg.dir("GitlabJuliaDemo"))
 using Coverage
