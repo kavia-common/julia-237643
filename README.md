@@ -2,6 +2,7 @@
 
 [![pipeline status](https://gitlab.com/tkpapp/GitlabJuliaDemo.jl/badges/master/pipeline.svg)](https://gitlab.com/tkpapp/GitlabJuliaDemo.jl/commits/master)
 [![coverage report](https://gitlab.com/tkpapp/GitlabJuliaDemo.jl/badges/master/coverage.svg)](https://gitlab.com/tkpapp/GitlabJuliaDemo.jl/commits/master)
+[![documentation (placeholder)](https://img.shields.io/badge/docs-latest-blue.svg)](https://tkpapp.gitlab.io/GitlabJuliaDemo.jl/)
 
 This is a minimal setup for a Julia package in Gitlab that has continuous integration and coverage summary set up.
 
