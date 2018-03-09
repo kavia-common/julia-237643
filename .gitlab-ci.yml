@@ -5,7 +5,6 @@ default:
     - julia build_script.jl
     - julia -e "Pkg.test(\"GitlabJuliaDemo\"; coverage = true)"
     - julia coverage_script.jl
-#    - cd docs; julia -e "Pkg.add(\"Documenter\")"; julia --color=yes make.jl
 
 pages:
   stage: deploy
@@ -13,8 +12,10 @@ pages:
     - julia build_script.jl
     - julia -e "Pkg.add(\"Documenter\")"
     - julia --color=yes docs/make.jl
+    - mv docs/build public
+    - ls -R
   artifacts:
     paths:
-      - docs/build
+      - public
   only:
   - master
