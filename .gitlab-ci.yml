@@ -14,11 +14,8 @@ pages:
   script:
     - julia build_script.jl
     - julia -e "Pkg.add(\"Documenter\")"
-    - ls -R                         # debug
-    - git rev-parse --show-toplevel # debug
     - julia --color=yes docs/make.jl
     - mv docs/build public
-    - ls -R                     # debug
   artifacts:
     paths:
       - public
