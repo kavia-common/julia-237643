@@ -7,8 +7,9 @@ default:
 #    - cd docs; julia -e "Pkg.add(\"Documenter\")"; julia --color=yes make.jl
 
 pages:
+  stage: deploy
   script:
-    - julia -e "Pkg.add(\"Documenter\")"; julia --color=yes make.jl
+    - julia -e "Pkg.add(\"Documenter\")"; julia --color=yes docs/make.jl
   artifacts:
     paths:
       - docs/build
