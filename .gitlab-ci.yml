@@ -51,10 +51,12 @@ test:1.0:
 #   `\(\d+.\d+\%\) covered` in the `test coverage parsing` textfield.
 
 # Example documentation deployment
-.pages_template: &pages_definition
+pages:
+  image: julia:0.1
   stage: deploy
   script:
-    - julia -e 'using Pkg; Pkg.add("GitlabJuliaDemo"); Pkg.add("Documenter")' # install Documenter
+    - julia -e 'using Pkg; Pkg.clone(pwd()); Pkg.build("GitlabJuliaDemo");' # rebuild Julia (can be put somewhere else I'm sure
+    - julia -e 'using Pkg; import GitlabJuliaDemo; Pkg.add("Documenter")' # install Documenter
     - julia --color=yes docs/make.jl # make documentation
     - mv docs/build public # move to the directory picked up by Gitlab pages
   artifacts:
@@ -63,13 +65,6 @@ test:1.0:
   only:
   - master
 
-pages:0.7:
-  image: julia:0.7
-  <<: *pages_definition
-
-pages:1.0:
-  image: julia:1.0
-  <<: *pages_definition
 
 # WARNING: This template is using the `julia` images from [Docker
 # Hub][3]. One can use custom Julia images and/or the official ones found
